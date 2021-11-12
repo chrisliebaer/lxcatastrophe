@@ -13,12 +13,12 @@ I don't know how accurate these assumptions are. If you are more experienced wit
 # Instructions
 I believe that if you are going to use this piece of art, you will know how to make use of it. There are currently a few things missing, like automatic SSH key deployment and proper network setup for probably a lot of LXC images. Documentation is coming! (In case the last commit is multiple years old: It's not coming, sorry)
 
-In the meantime, take this basic example which should hopefully net you a Ubuntu container
+In the meantime, take this basic example which should hopefully net you an Ubuntu container
 ```bash
 docker build -t lxcatastrophe:latest
 docker run --privileged \
 	-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-	-e "DIST_NAME=ubuntu" -e "DIST_FLAVOUR=edge" \
+	-e "DIST_NAME=ubuntu" -e "DIST_FLAVOUR=focal" \
 	lxcatastrophe:latest
 ```
 
