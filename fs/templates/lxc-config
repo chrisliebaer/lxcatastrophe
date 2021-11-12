@@ -1,0 +1,23 @@
+lxc.tty.dir = lxc
+lxc.pty.max = 1024
+
+# if container tries to spawn more than this, tty process will repeatedly crash
+lxc.tty.max = 4 
+#lxc.cap.drop = ${CAPS_DROP}
+#lxc.cap.keep = ${CAPS_KEEP}
+lxc.mount.auto = cgroup:mixed proc:mixed sys:ro
+lxc.rootfs.path = dir:${C_ROOTFS}
+
+# remap user ids inside container so root does not equal outside root
+lxc.idmap = u 0 1000000 65536
+lxc.idmap = g 0 1000000 65536
+
+lxc.uts.name = $C_HOSTNAME
+
+lxc.net.0.name = eth0
+lxc.net.0.type = veth
+lxc.net.0.link = br0
+lxc.net.0.flags = up
+
+# this file is writting by wrapper each time the container is spun up to update the network configuration
+lxc.include = /lxc-network.conf

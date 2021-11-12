@@ -1,0 +1,4 @@
+# This file os populated by the wrapper each time the container starts
+lxc.net.0.ipv4.address=$HOST_IP_CIDR
+lxc.net.0.ipv4.gateway=$HOST_GATEWAY
+lxc.net.0.hwaddr = $C_MAC

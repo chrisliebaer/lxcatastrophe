@@ -1,0 +1,3 @@
+#!/bin/ash
+
+lxc-attach container
